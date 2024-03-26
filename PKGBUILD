@@ -4,7 +4,7 @@ url='https://github.com/ros/ros_comm'
 pkgname='ros-noetic-roscpp'
 pkgver='1.16.0'
 arch=('i686' 'x86_64' 'aarch64' 'armv7h' 'armv6h')
-pkgrel=1
+pkgrel=2
 license=('BSD')
 
 ros_makedepends=(
@@ -45,9 +45,10 @@ depends=(
     ${ros_depends[@]}
 )
 
-_dir="ros_comm-${pkgver}/clients/roscpp"
-source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ros/ros_comm/archive/${pkgver}.tar.gz")
-sha256sums=('0a51857a50cf646db4af85469cb0e4877b1484f7aa0c00ec65a8be7ff574a886')
+_commit="845f74602c7464e08ef5ac6fd9e26c97d0fe42c9"
+_dir="ros_comm-${_commit}/clients/roscpp"
+source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/ros/ros_comm/archive/${_commit}.tar.gz")
+sha256sums=('382c8681ac2c9546ef3870d365410ec59ac1bc779cc6c0a68304cf595a66023b')
 
 build() {
     # Use ROS environment variables.
